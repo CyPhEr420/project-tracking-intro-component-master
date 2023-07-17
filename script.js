@@ -20,6 +20,7 @@ navToggle.addEventListener('click', (e) => {
 overlay.addEventListener('click', () => {
     if (navListContainer.classList.contains('active')) {
         navListContainer.classList.remove('active');
+        navToggle.classList.remove('active')
         navToggle.src = './images/icon-hamburger.svg'
 
     }
