@@ -1,6 +1,6 @@
 const navToggle = document.querySelector('.nav-toggle');
 const navListContainer = document.querySelector('.nav-list-container');
-const body = document.querySelector('.body')
+const overlay = document.querySelector('.overlay')
 
 navToggle.addEventListener('click', (e) => {
     let logo = e.target
@@ -12,9 +12,15 @@ navToggle.addEventListener('click', (e) => {
         logo.classList.add('active');
         logo.src = './images/icon-close.svg'
         navListContainer.classList.add('active');
-
-
     }
 
 })
 
+
+overlay.addEventListener('click', () => {
+    if (navListContainer.classList.contains('active')) {
+        navListContainer.classList.remove('active');
+        navToggle.src = './images/icon-hamburger.svg'
+
+    }
+})
