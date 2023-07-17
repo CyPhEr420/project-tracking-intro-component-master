@@ -1,5 +1,6 @@
 const navToggle = document.querySelector('.nav-toggle');
-const navListContainer = document.querySelector('.nav-list-container')
+const navListContainer = document.querySelector('.nav-list-container');
+const body = document.querySelector('.body')
 
 navToggle.addEventListener('click', (e) => {
     let logo = e.target
@@ -16,3 +17,4 @@ navToggle.addEventListener('click', (e) => {
     }
 
 })
+
