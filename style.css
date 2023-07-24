@@ -13,7 +13,8 @@ html {
 body {
   font-size: 1.6rem;
   font-family: "Barlow Condensed", sans-serif;
-  height: 100dvh;
+  height: 100vh;
+  overflow-x: hidden;
 }
 
 li {
@@ -33,6 +34,15 @@ a,
 a:hover,
 .login:hover {
   text-decoration: underline;
+}
+
+.bg-style {
+  width: 50%;
+  height: 350px;
+  background-color: hsl(207, 33%, 95%);
+  position: absolute;
+  right: 0;
+  z-index: -1;
 }
 
 nav {
@@ -73,14 +83,130 @@ nav {
   cursor: pointer;
 }
 
-@media (max-width: 400px) {
+main {
+  display: flex;
+  overflow-x: hidden;
+}
+
+.text {
+  width: 100%;
+  padding: 15rem 0 0 15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.hero-title-container {
+  width: 50%;
+}
+
+.top-text {
+  color: hsl(231, 7%, 65%);
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 2.5px;
+  font-size: 1.5rem;
+}
+
+.top-text span {
+  background-color: #000;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 10rem;
+  letter-spacing: 1px;
+  margin-right: 0.3rem;
+}
+
+.primary-title {
+  font-size: clamp(4rem, 10vw, 7rem);
+  line-height: clamp(2.5rem, 10vw, 7rem);
+  text-transform: uppercase;
+}
+
+.secondary-title {
+  font-size: clamp(1.8rem, 1vw, 3rem);
+  color: hsl(231, 7%, 65%);
+  text-transform: uppercase;
+}
+
+.demo-container {
+  display: flex;
+  gap: 3rem;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: none;
+  width: 100%;
+}
+
+.btn-primary {
+  background-color: hsl(0, 100%, 68%);
+  color: #fff;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: hsl(231, 7%, 65%);
+}
+
+.hero-image {
+  padding-top: 5rem;
+  display: flex;
+  align-items: center;
+}
+
+.hero-image img {
+  width: 100%;
+}
+
+@media (max-width: 800px) {
   .overlay {
     position: absolute;
     inset: 0;
   }
 
+  .bg-style {
+    height: 200px;
+  }
+
+  .hero-title-container {
+    width: 100%;
+    order: 1;
+    height: 50%;
+  }
+  .text {
+    padding: 3rem;
+  }
+
+  .hero-image {
+    margin-right: -16rem;
+  }
+
+  main {
+    flex-direction: column;
+    gap: 5rem;
+  }
+
+  button {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+  }
+
   nav {
-    padding: 4rem 4rem 0 4rem;
+    padding: 4rem 4rem 0rem 4rem;
   }
   .nav-toggle {
     display: block;
@@ -100,6 +226,7 @@ nav {
     gap: 2rem;
     text-align: center;
     padding: 3rem 4rem 3rem 4rem;
+    background-color: #fff;
   }
 
   .nav-list {
